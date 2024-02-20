@@ -66,4 +66,9 @@ public class Aluno implements Serializable {
         return id > 0;
     }
 
+    public boolean isEmailValid(String email){
+        String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
+        return email.matches(emailRegex);
+    }
+
 }
