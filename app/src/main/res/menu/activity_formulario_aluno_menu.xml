@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_voltar"
+        android:icon="@drawable/ic_action_voltar_lista"
+        android:title="Voltar"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/activity_formulario_aluno_menu_salvar"
+        app:showAsAction="always"
+        android:title="Salvar"
+        android:icon="@drawable/ic_action_salvar_aluno_done"/>
+</menu>

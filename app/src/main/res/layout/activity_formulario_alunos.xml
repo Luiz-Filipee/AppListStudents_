@@ -1,67 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    tools:context=".ui.activity.FormularioAlunoActivity">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/iv_close_activity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_back"
-        android:clickable="true"
-        android:layout_margin="16dp"/>
-
-    <TextView
-        android:id="@+id/tv_campo_nome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/nome"
-        android:layout_margin="16dp"
-        android:textSize="20sp"/>
-
-    <EditText
-        android:id="@+id/activity_formulario_aluno_nome"
-        android:layout_width="match_parent"
-        android:layout_margin="8dp"
-        android:inputType="textCapWords"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:id="@+id/tv_campo_numero"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/numero"
-        android:layout_margin="16dp"
-        android:textSize="20sp"/>
-
-    <EditText android:id="@+id/activity_formulario_aluno_telefone"
-        android:layout_width="match_parent"
-        android:layout_margin="8dp"
-        android:inputType="phone"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:id="@+id/tv_campo_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/email"
-        android:layout_margin="16dp"
-        android:textSize="20sp"/>
-
-    <EditText android:id="@+id/activity_formulario_aluno_email"
-        android:layout_width="match_parent"
-        android:layout_margin="8dp"
-        android:inputType="textEmailAddress"
-        android:layout_height="wrap_content" />
-
-    <Button android:id="@+id/activity_formulario_aluno_botao_salvar"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:text="@string/submit"
-        android:textSize="20sp"/>
+        android:orientation="vertical"
+        tools:context=".ui.activity.FormularioAlunoActivity">
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/tv_campo_nome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/nome"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/activity_formulario_aluno_nome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:hint="Marcos Martins"
+            android:inputType="textCapWords" />
+
+        <TextView
+            android:id="@+id/tv_campo_numero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/numero"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/activity_formulario_aluno_telefone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:inputType="phone"
+            android:hint="(XX) X XXXX-XXXX"/>
+
+        <TextView
+            android:id="@+id/tv_campo_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/email"
+            android:textSize="20sp"
+            />
+
+        <EditText
+            android:id="@+id/activity_formulario_aluno_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:inputType="textEmailAddress"
+            android:hint="example@gmail.com"/>
+
+    </LinearLayout>
+
+</ScrollView>
