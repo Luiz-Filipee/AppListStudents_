@@ -4,11 +4,11 @@
     <item
         android:id="@+id/menu_voltar"
         android:icon="@drawable/ic_action_voltar_lista"
-        android:title="Voltar"
+        android:title="@string/voltar"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/activity_formulario_aluno_menu_salvar"
         app:showAsAction="always"
-        android:title="Salvar"
+        android:title="@string/salvar_aluno"
         android:icon="@drawable/ic_action_salvar_aluno_done"/>
 </menu>

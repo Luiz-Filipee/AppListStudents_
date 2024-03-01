@@ -2,63 +2,79 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         tools:context=".ui.activity.FormularioAlunoActivity">
 
         <TextView
-            android:id="@+id/tv_campo_nome"
+            android:id="@+id/activity_formulario_aluno"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:text="@string/nome"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
 
         <EditText
-            android:id="@+id/activity_formulario_aluno_nome"
+            android:id="@+id/activity_formulario_aluno_campo_nome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:hint="Marcos Martins"
-            android:inputType="textCapWords" />
+            android:hint="@string/nome_hint"
+            android:inputType="textCapWords"
+            android:importantForAutofill="no"
+            app:layout_constraintStart_toStartOf="@+id/activity_formulario_aluno"
+            app:layout_constraintTop_toBottomOf="@+id/activity_formulario_aluno"/>
 
         <TextView
-            android:id="@+id/tv_campo_numero"
+            android:id="@+id/activity_formulario_aluno_telefone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
             android:text="@string/numero"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@+id/activity_formulario_aluno"
+            app:layout_constraintTop_toBottomOf="@+id/activity_formulario_aluno_campo_nome"/>
 
         <EditText
-            android:id="@+id/activity_formulario_aluno_telefone"
+            android:id="@+id/activity_formulario_aluno_campo_telefone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:inputType="phone"
-            android:hint="(XX) X XXXX-XXXX"/>
+            android:hint="@string/default_number"
+            android:importantForAutofill="no"
+            app:layout_constraintStart_toStartOf="@+id/activity_formulario_aluno"
+            app:layout_constraintTop_toBottomOf="@+id/activity_formulario_aluno_telefone"/>
 
         <TextView
-            android:id="@+id/tv_campo_email"
+            android:id="@+id/activity_formulario_aluno_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
             android:text="@string/email"
             android:textSize="20sp"
-            />
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@+id/activity_formulario_aluno"
+            app:layout_constraintTop_toBottomOf="@+id/activity_formulario_aluno_campo_telefone"/>
 
         <EditText
-            android:id="@+id/activity_formulario_aluno_email"
+            android:id="@+id/activity_formulario_aluno_campo_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:inputType="textEmailAddress"
-            android:hint="example@gmail.com"/>
+            android:hint="@string/example_gmail"
+            android:importantForAutofill="no"
+            app:layout_constraintStart_toStartOf="@+id/activity_formulario_aluno"
+            app:layout_constraintTop_toBottomOf="@+id/activity_formulario_aluno_email"/>
 
-    </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

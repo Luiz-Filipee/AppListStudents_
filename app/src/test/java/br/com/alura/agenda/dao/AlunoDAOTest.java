@@ -2,9 +2,6 @@ package br.com.alura.agenda.dao;
 
 import junit.framework.TestCase;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import br.com.alura.agenda.model.Aluno;
 
 public class AlunoDAOTest extends TestCase {

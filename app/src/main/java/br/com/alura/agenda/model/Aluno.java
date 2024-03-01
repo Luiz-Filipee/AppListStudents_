@@ -3,10 +3,6 @@ package br.com.alura.agenda.model;
 import androidx.annotation.NonNull;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-
-import br.com.alura.agenda.dao.AlunoDAO;
 
 public class Aluno implements Serializable {
     private String nome;
@@ -59,16 +55,10 @@ public class Aluno implements Serializable {
     @NonNull
     @Override
     public String toString() {
-        return nome;
+        return nome + " - " + telefone;
     }
 
     public boolean temIdValido() {
         return id > 0;
     }
-
-    public boolean isEmailValid(String email){
-        String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
-        return email.matches(emailRegex);
-    }
-
 }

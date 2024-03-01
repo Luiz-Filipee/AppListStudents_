@@ -4,12 +4,11 @@ import static br.com.alura.agenda.ui.activity.ConstantesActivities.CHAVE_ALUNO;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import br.com.alura.agenda.R;
@@ -31,10 +30,26 @@ public class FormularioAlunoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formulario_alunos);
         inicializacaoDosCampos();
-        configuraBotaoSalvar();
-        configuraBotaoVoltar();
         carregaAluno();
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.activity_formulario_aluno_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int itemId = item.getItemId();
+        if(itemId == R.id.activity_formulario_aluno_menu_salvar){
+            finalizaFormulario();
+        }else if(itemId == R.id.menu_voltar){
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 
     private void carregaAluno() {
         Intent dados = getIntent(); // Pegando o intent da outra classe
@@ -54,45 +69,22 @@ public class FormularioAlunoActivity extends AppCompatActivity {
         campoEmail.setText(aluno.getEmail());
     }
 
-    private void configuraBotaoSalvar() {
-        Button btnSalvar = findViewById(R.id.activity_formulario_aluno_botao_salvar);
-        btnSalvar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finalizaFormulario();
-            }
-        });
-    }
-
     private void finalizaFormulario() {
         preencheAluno();
         if (aluno.temIdValido()) {
             dao.edita(aluno);
             finish();
         } else {
-           if (aluno.isEmailValid(aluno.getEmail()) == false){
-               Toast.makeText(this,"Email invalido. Tente novamente", Toast.LENGTH_SHORT).show();
-           }else{
-               dao.salva(aluno);
-               finish();
-           }
+            dao.salva(aluno);
+            finish();
         }
     }
 
-    private void configuraBotaoVoltar() {
-        ImageView setaVoltar = findViewById(R.id.iv_close_activity);
-        setaVoltar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-    }
 
     private void inicializacaoDosCampos() {
-        campoNome = findViewById(R.id.activity_formulario_aluno_nome);
-        campoTelefone = findViewById(R.id.activity_formulario_aluno_telefone);
-        campoEmail = findViewById(R.id.activity_formulario_aluno_email);
+        campoNome = findViewById(R.id.activity_formulario_aluno_campo_nome);
+        campoTelefone = findViewById(R.id.activity_formulario_aluno_campo_telefone);
+        campoEmail = findViewById(R.id.activity_formulario_aluno_campo_email);
     }
 
     private void preencheAluno() {

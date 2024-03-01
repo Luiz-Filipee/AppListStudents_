@@ -10,7 +10,7 @@ public class AlunoTest extends TestCase {
     @Test
     public void testIsEmailValid() {
         aluno.setEmail("luizkato@gmail.com");
-        String email = aluno.getEmail().toString();
+        String email = aluno.getEmail();
         assertTrue(aluno.isEmailValid(email));
     }
 }

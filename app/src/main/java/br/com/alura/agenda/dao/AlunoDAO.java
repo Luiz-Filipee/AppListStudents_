@@ -18,7 +18,7 @@ public class AlunoDAO {
         atualizaIds();
     }
 
-    public void atualizaIds(){
+    public void atualizaIds() {
         contadorDeId++;
     }
 
@@ -47,7 +47,7 @@ public class AlunoDAO {
 
     public void remove(Aluno alunoEscolhido) {
         Aluno alunoDevolvido = findViewById(alunoEscolhido);
-        if(alunoDevolvido != null){
+        if (alunoDevolvido != null) {
             alunos.remove(alunoDevolvido);
         }
     }

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.LoginAlunosActivity">
+
+    <TextView
+        android:id="@+id/activity_login_titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_login"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/purple"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="50dp"/>
+
+    <TextView
+        android:id="@+id/activity_login_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="35dp"
+        android:text="@string/text_info"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_login_titulo"/>
+
+    <EditText
+        android:id="@+id/acitivity_login_campo_email"
+        android:layout_width="343dp"
+        android:layout_height="50dp"
+        android:hint="@string/email"
+        android:textColorHint="@color/hint"
+        android:ems="18"
+        android:inputType="textEmailAddress"
+        android:paddingStart="16dp"
+        android:background="@drawable/edit_text_border"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_login_info"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/acitivity_login_campo_password"
+        android:layout_width="343dp"
+        android:layout_height="50dp"
+        android:hint="@string/password"
+        android:textColorHint="@color/hint"
+        android:paddingStart="16dp"
+        android:ems="18"
+        android:inputType="textPassword"
+        android:background="@drawable/edit_text_border"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/acitivity_login_campo_email"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/activity_login_button"
+        android:layout_width="343dp"
+        android:layout_height="50dp"
+        android:text="@string/title_login"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/acitivity_login_campo_password"
+        app:layout_constraintTop_toBottomOf="@+id/acitivity_login_campo_password"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/background_button"/>
+
+    <TextView
+        android:id="@+id/activity_login_forgot_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/esqueceu_sua_senha"
+        android:textSize="15sp"
+        android:textColor="@color/purple"
+        android:textAlignment="center"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_login_button"/>
+
+    <ImageView
+        android:id="@+id/image_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher_list_background_final"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="100dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
