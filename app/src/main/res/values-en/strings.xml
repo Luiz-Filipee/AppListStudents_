@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">List students</string>
+    <string name="submit">Submit</string>
+    <string name="email">Enter a email:</string>
+    <string name="nome">Enter a name:</string>
+    <string name="numero">Enter a number:</string>
+    <string name="remover">Remove</string>
+    <string name="nome_hint">Marcos Martins</string>
+    <string name="default_number">(XX) X XXXX-XXXX</string>
+    <string name="example_gmail">example@gmail.com</string>
+    <string name="voltar">Back</string>
+    <string name="salvar_aluno">Save</string>
+    <string name="title_login">Login</string>
+    <string name="email_login" translatable="false">Email</string>
+    <string name="password" translatable="false">Password</string>
+    <string name="esqueceu_sua_senha">Forgot password?</string>
+    <string name="text_info">Welcome to the App that will
+                        facilitate your student management.
+    </string>
+</resources>

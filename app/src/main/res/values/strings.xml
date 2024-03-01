@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Todoist</string>
+    <string name="submit">Enviar</string>
+    <string name="email">Digite seu email:</string>
+    <string name="nome">Digite seu nome:</string>
+    <string name="numero">Digite seu numero:</string>
+    <string name="remover">Remover</string>
+    <string name="nome_hint">Marcos Martins</string>
+    <string name="default_number">(XX) X XXXX-XXXX</string>
+    <string name="example_gmail">example@gmail.com</string>
+    <string name="voltar">Voltar</string>
+    <string name="salvar_aluno">Salvar</string>
+    <string name="title_login">Login</string>
+    <string name="email_login">Email</string>
+    <string name="password">Senha</string>
+    <string name="esqueceu_sua_senha">Esqueceu sua Senha?</string>
+    <string name="text_info">Bem-vindo ao App que irá
+                        facilitar a sua gestão de alunos.
+    </string>
+</resources>
