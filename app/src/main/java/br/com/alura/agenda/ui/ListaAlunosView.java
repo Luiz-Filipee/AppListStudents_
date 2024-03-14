@@ -7,20 +7,23 @@ import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+import androidx.room.Room;
 
-import br.com.alura.agenda.dao.AlunoDAO;
+import br.com.alura.agenda.database.AgendaDataBase;
+import br.com.alura.agenda.database.dao.RoomAlunoDAO;
 import br.com.alura.agenda.model.Aluno;
 import br.com.alura.agenda.ui.adapter.ListaAlunosAdapter;
 
 public class ListaAlunosView {
     private final ListaAlunosAdapter adapter;
-    private final AlunoDAO dao;
-    private final  Context context;
+    private final RoomAlunoDAO dao;
+    private final Context context;
 
     public ListaAlunosView(Context context) {
         this.context = context;
         this.adapter = new ListaAlunosAdapter(this.context);
-        this.dao = new AlunoDAO();
+        dao = AgendaDataBase.getInstance(this.context)
+                .getRoomAlunoDAO();
     }
 
     public void confirmaRemocao(@NonNull final MenuItem item) {
@@ -33,7 +36,7 @@ public class ListaAlunosView {
                     Aluno alunoEscolhido = adapter.getItem(menuInfo.position);
                     removeAluno(alunoEscolhido);
                 })
-                .setNegativeButton("Não",null).show();
+                .setNegativeButton("Não", null).show();
     }
 
     public void atualizaAluno() {

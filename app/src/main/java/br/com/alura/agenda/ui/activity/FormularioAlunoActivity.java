@@ -10,9 +10,12 @@ import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import br.com.alura.agenda.R;
 import br.com.alura.agenda.dao.AlunoDAO;
+import br.com.alura.agenda.database.AgendaDataBase;
+import br.com.alura.agenda.database.dao.RoomAlunoDAO;
 import br.com.alura.agenda.model.Aluno;
 
 public class FormularioAlunoActivity extends AppCompatActivity {
@@ -21,7 +24,7 @@ public class FormularioAlunoActivity extends AppCompatActivity {
     private EditText campoTelefone;
     private EditText campoEmail;
     private Aluno aluno;
-    private final AlunoDAO dao = new AlunoDAO();
+    private RoomAlunoDAO dao;
     private static final String TITULO_APPBAR_NOVO_ALUNO = "Novo Aluno";
     private static final String TITULO_APPBAR_Edita_ALUNO = "Edita Aluno";
 
@@ -29,6 +32,8 @@ public class FormularioAlunoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formulario_alunos);
+        AgendaDataBase dataBase = AgendaDataBase.getInstance(this);
+        dao = dataBase.getRoomAlunoDAO();
         inicializacaoDosCampos();
         carregaAluno();
     }
@@ -42,9 +47,9 @@ public class FormularioAlunoActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int itemId = item.getItemId();
-        if(itemId == R.id.activity_formulario_aluno_menu_salvar){
+        if (itemId == R.id.activity_formulario_aluno_menu_salvar) {
             finalizaFormulario();
-        }else if(itemId == R.id.menu_voltar){
+        } else if (itemId == R.id.menu_voltar) {
             finish();
         }
         return super.onOptionsItemSelected(item);

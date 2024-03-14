@@ -21,13 +21,14 @@ import br.com.alura.agenda.ui.ListaAlunosView;
 
 public class ListaAlunosActivity extends AppCompatActivity {
     private static final String TITULO_APPBAR = "Lista de Alunos";
-    private ListaAlunosView listaAlunosView= new ListaAlunosView(this);
+    private ListaAlunosView listaAlunosView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_alunos);
         setTitle(TITULO_APPBAR);
+        listaAlunosView = new ListaAlunosView(this);
         configuraFabNovoAluno();
         configuraLista();
     }
